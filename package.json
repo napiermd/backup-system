@@ -1,0 +1,35 @@
+{
+  "name": "backup-system",
+  "version": "1.0.0",
+  "description": "Automated Backup System (Matthew Berman Style) - Auto-discovers SQLite databases, encrypts, uploads to Google Drive, hourly git sync",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "backup": "bash scripts/backup.sh",
+    "restore": "bash scripts/restore.sh",
+    "pre-commit": "node dist/pre-commit.js",
+    "install-hook": "node dist/pre-commit.js install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backup",
+    "sqlite",
+    "encryption",
+    "google-drive",
+    "auto-sync",
+    "cron"
+  ],
+  "author": "Andrew Napier",
+  "license": "MIT",
+  "dependencies": {
+    "googleapis": "^120.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
